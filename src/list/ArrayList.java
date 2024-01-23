@@ -40,6 +40,11 @@ public class ArrayList<E> implements List<E>
 
     public void add(int ndx, E value)
     {
+        if(size == values.length)
+        {
+            alloc();
+        }
+
         for (int i = size; i > ndx; i--)
         {
             values[i] = values[i-1];

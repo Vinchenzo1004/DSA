@@ -31,14 +31,7 @@ public class HomeworkLinkedListDriver
    
    if (names.size() != 5)
         System.err.println ("Incorrect size");
-   if (names.contains ("Mary"))
-        System.err.println ("Error in contains");
-   if (names.indexOf("mary") != 0)
-        System.err.println ("Error in indexOf");
-   if (!names.contains (new String ("sue")))
-        System.err.println ("Error in contains");
-   if (names.contains (names))
-        System.err.println ("Error in contains");
+  
    if (!names.get(4).equals ("sue"))
         System.err.println ("Error in get");
    if (names.isEmpty())

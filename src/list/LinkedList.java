@@ -40,4 +40,57 @@ public class LinkedList<E> implements List<E>
         ref.value = value;    //clobbering old value
         return result;        //returning old value
     }
+
+    public void add (E value)
+    {
+        Node<E> temp = new Node<E>(value, tail, tail.prev);
+        tail.prev.next = temp;
+        tail.prev = temp;
+        size++;
+    }
+
+    public void add(int ndx, E value)
+    {
+        setRef(ndx);
+        Node<E> temp = new Node<E>(value, ref, ref.prev);
+        ref.prev.next = temp;
+        ref.prev = temp;
+        size++;
+    }
+
+    public E remove(int ndx)
+    {
+        setRef(ndx);
+        ref.prev.next = ref.next;
+        ref.next.prev = ref.prev;
+        size--;
+        return ref.value;
+    }
+
+    public int size()
+    {
+        return size;
+    }
+
+    public boolean isEmpty()
+    {
+        if(size == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void clear()
+    {
+        head.next = tail;
+        tail.prev = head;
+        size = 0;
+    }
+
+
 }
+
