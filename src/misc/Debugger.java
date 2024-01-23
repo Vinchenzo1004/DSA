@@ -1,6 +1,5 @@
 package misc;
 
-
 /**
  * Practice using the debugger
  * 
@@ -10,21 +9,25 @@ package misc;
 public class Debugger
 {
     static int i;
-    public static void main (String []args )
+    public static void main (String[] args)
     {
     System.out.println ("Starting");
         
         for (i=30; i<200; i++)  
-           { method(i);
+           {
+               method(i);
                System.out.println (i);
             }
         
      System.out.println ("Finished");
     }
     
-    private static void method(int parm)
-    {   double x= parm;
+    private static void method(int param)
+    {
+        double x= param;
         while (x>0.0)
-            x = x/2;
+        {
+            x = x / 2;
+        }
     }
 }

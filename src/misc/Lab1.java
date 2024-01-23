@@ -1,19 +1,18 @@
 package misc;
 import java.util.*;
 
-
 /**
  * Work with lists
  * 
  * @author (sdb)
- * @author (PUT YOUR NAME HERE)
+ * @author Vincent Vaccaro
  * @version (Fall 2020)
  */
 public class Lab1
 {   static int MAX = 1000000;
-    public static void main()
+    public static void main(String[] args)
     {
-        List<Integer> myList = new List<Integer>();
+        List<Integer> myList = new LinkedList<Integer>();
         init (myList);
         System.out.println ("First 20 numbers before removing evens");
         show (myList,20);
@@ -28,7 +27,10 @@ public class Lab1
      */
     private  static void deleteEvens(List<Integer> aList)
     {
-       PUT YOUR CODE HERE
+        Iterator<Integer> it = aList.iterator();
+        while (it.hasNext())
+            if (it.next() % 2 == 0)
+                it.remove();
     }
   
 //     Initialize the given list with MAX integers
