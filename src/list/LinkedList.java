@@ -1,4 +1,5 @@
 package list;
+import java.util.*;
 
 /**
  * A List implemented with references
@@ -91,6 +92,48 @@ public class LinkedList<E> implements List<E>
         size = 0;
     }
 
+    public int indexOf(Object obj)
+    {
+        ref = head.next;
+        for (int i = 0; i < size; i++)
+        {
+            if(ref.value.equals(obj))
+            {
+                return i;
+            }
+            else
+            {
+                ref = ref.next;
+            }
+        }
+        return -1;
+    }
 
+    public boolean contains(Object obj)
+    {
+        return indexOf(obj) != -1;
+    }
+
+    /**
+     * @return this List as a String
+     */
+    public String toString()
+    {
+        if (isEmpty())
+        {
+            return "[]";
+        }
+
+        String result = "";
+        for(int i = 0; i < size; i++)
+        {
+            result += get(i);
+            if(i != size - 1)
+            {
+                result += ", ";
+            }
+        }
+        return "[" + result + "]";
+    }
 }
 

@@ -1,4 +1,5 @@
 package list;
+import java.util.Iterator;
 
 /**
  * An implementation of the List interface using an Array
@@ -87,5 +88,44 @@ public class ArrayList<E> implements List<E>
     public void clear()
     {
         size = 0;
+    }
+
+    public int indexOf(Object obj)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (values[i].equals(obj))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public boolean contains(Object obj)
+    {
+        return indexOf(obj) != -1;
+    }
+
+    /**
+     * @return this List as a String
+     */
+    public String toString()
+    {
+        if(isEmpty())
+        {
+            return "[]";
+        }
+
+        String result = "";
+        for (int i = 0; i < size; i++)
+        {
+            result += values[i];
+            if(i != size - 1)
+            {
+                result += ", ";
+            }
+        }
+        return "[" + result + "]";
     }
 }

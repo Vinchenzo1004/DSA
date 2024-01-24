@@ -54,4 +54,14 @@ public interface List<E>
      * Clear this List
      */
     void clear();
+
+    /**
+     * @return the index of the given object in this List, or -1 if not found
+     * */
+    int indexOf(Object obj);
+
+    /**
+     * @return true iff this List contains the given object
+     * */
+    boolean contains(Object obj);
 }
