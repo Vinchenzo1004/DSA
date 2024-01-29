@@ -1,5 +1,4 @@
 package list;
-import java.util.*;
 
 /**
  * A List implemented with references
@@ -124,16 +123,21 @@ public class LinkedList<E> implements List<E>
             return "[]";
         }
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for(int i = 0; i < size; i++)
         {
-            result += get(i);
+            result.append(get(i));
             if(i != size - 1)
             {
-                result += ", ";
+                result.append(", ");
             }
         }
         return "[" + result + "]";
+    }
+
+    public Iterator<E> iterator()
+    {
+        return null; //stub (under construction)
     }
 }
 

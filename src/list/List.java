@@ -64,4 +64,9 @@ public interface List<E>
      * @return true iff this List contains the given object
      * */
     boolean contains(Object obj);
+
+    /**
+     * @return an Iterator for this List
+     */
+    Iterator<E> iterator();
 }

@@ -1,5 +1,4 @@
 package list;
-import java.util.Iterator;
 
 /**
  * An implementation of the List interface using an Array
@@ -117,15 +116,20 @@ public class ArrayList<E> implements List<E>
             return "[]";
         }
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < size; i++)
         {
-            result += values[i];
+            result.append(values[i]);
             if(i != size - 1)
             {
-                result += ", ";
+                result.append(", ");
             }
         }
         return "[" + result + "]";
+    }
+
+    public Iterator<E> iterator()
+    {
+        return new ArrayIterator<E>(this);
     }
 }
