@@ -137,7 +137,7 @@ public class LinkedList<E> implements List<E>
 
     public Iterator<E> iterator()
     {
-        return null; //stub (under construction)
+        return new RefIterator<E>(this); //stub (under construction)
     }
 }
 
