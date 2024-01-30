@@ -14,11 +14,6 @@ class ArrayIterator<E> implements Iterator<E>
         this.list = list;
     }
 
-    ArrayIterator()
-    {
-
-    }
-
     public boolean hasNext()
     {
         return ndx < list.size() - 1;

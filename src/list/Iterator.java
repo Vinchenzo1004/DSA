@@ -2,6 +2,7 @@ package list;
 
 /**
  * Iterate through a Collection
+ * Provide the ability to visit all values in a Collection
  *
  * @author SDB & Vincent Vaccaro
  */
