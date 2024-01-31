@@ -118,7 +118,7 @@ public class LinkedList<E> implements List<E>
      */
     public String toString()
     {
-        if (isEmpty())
+        if(isEmpty())
         {
             return "[]";
         }
@@ -138,6 +138,23 @@ public class LinkedList<E> implements List<E>
     public Iterator<E> iterator()
     {
         return new RefIterator<E>(this); //stub (under construction)
+    }
+
+    public boolean lastIsDuplicated()
+    {
+        ref = head.next;
+        for(int i = 0; i < size - 1; i++)
+        {
+            if(ref.value.equals(ref.next.value))
+            {
+                return true;
+            }
+            else
+            {
+                ref = ref.next;
+            }
+        }
+        return false;
     }
 }
 

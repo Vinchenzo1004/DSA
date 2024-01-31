@@ -117,7 +117,7 @@ public class ArrayList<E> implements List<E>
         }
 
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < size; i++)
+        for(int i = 0; i < size; i++)
         {
             result.append(values[i]);
             if(i != size - 1)
@@ -131,5 +131,10 @@ public class ArrayList<E> implements List<E>
     public Iterator<E> iterator()
     {
         return new ArrayIterator<E>(this);
+    }
+
+    public boolean lastIsDuplicated()
+    {
+        return Boolean.parseBoolean(null);
     }
 }

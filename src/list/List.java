@@ -69,4 +69,9 @@ public interface List<E>
      * @return an Iterator for this List
      */
     Iterator<E> iterator();
+
+    /**
+     * @return true iff the last value in this List is duplicated
+     */
+    boolean lastIsDuplicated();
 }
