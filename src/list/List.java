@@ -74,4 +74,11 @@ public interface List<E>
      * @return true iff the last value in this List is duplicated
      */
     boolean lastIsDuplicated();
+
+    /**
+     * Remove the first occurrence of obj from this List, if possible.
+     *
+     * @return true iff the object was removed
+     */
+    boolean remove (Object obj);
 }

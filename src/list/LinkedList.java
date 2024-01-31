@@ -156,5 +156,46 @@ public class LinkedList<E> implements List<E>
         }
         return false;
     }
+
+    public boolean remove(Object obj)
+    {
+        Iterator<E> it = iterator();
+        while(it.hasNext())
+        {
+            if(it.next().equals(obj))
+            {
+                it.remove();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @return true iff the given Object is a List and this List is equal to the given List.
+     */
+    public boolean equals (Object obj)
+    {
+        if(!(obj instanceof List))
+        {
+            return false;
+        }
+        List<E> other = (List<E>) obj;
+        if(size != other.size())
+        {
+            return false;
+        }
+
+        Iterator<E> it = iterator();
+        Iterator<E> temp = other.iterator();
+        while(it.hasNext() && temp.hasNext())
+        {
+            if(!(it.next().equals(temp.next())))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
