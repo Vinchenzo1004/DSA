@@ -197,5 +197,15 @@ public class LinkedList<E> implements List<E>
         }
         return true;
     }
+
+    public ListIterator<E> listIterator()
+    {
+        return null;
+    }
+
+    public ListIterator<E> listIterator(int start)
+    {
+        return null;
+    }
 }
 

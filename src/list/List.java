@@ -81,4 +81,16 @@ public interface List<E>
      * @return true iff the object was removed
      */
     boolean remove (Object obj);
+
+    /**
+     * @return a ListIterator for this List.
+     */
+    ListIterator<E> listIterator();
+
+    /**
+     * @return a ListIterator for this List with given start.
+     * start = size => starting at the end
+     * Pre: 0 <= start <= size
+     */
+    ListIterator<E> listIterator(int start);
 }

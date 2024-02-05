@@ -179,4 +179,14 @@ public class ArrayList<E> implements List<E>
         }
         return true;
     }
+
+    public ListIterator<E> listIterator()
+    {
+        return new ArrayListIterator<E>(this);
+    }
+
+    public ListIterator<E> listIterator(int start)
+    {
+        return new ArrayListIterator<E>(this, start);
+    }
 }
