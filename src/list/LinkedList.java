@@ -200,12 +200,12 @@ public class LinkedList<E> implements List<E>
 
     public ListIterator<E> listIterator()
     {
-        return null;
+        return new RefListIterator<E>(this);
     }
 
     public ListIterator<E> listIterator(int start)
     {
-        return null;
+        return new RefListIterator<E>(this, start);
     }
 }
 
