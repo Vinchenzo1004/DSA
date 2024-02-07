@@ -28,4 +28,12 @@ public interface ListIterator<E> extends Iterator<E>
      * Pre: next() or previous() was called since the last call to remove()
      */
     void remove();
+
+    /**
+     * Insert the given value just prior to the implicit cursor position. A subsequent
+     * call to previous() should return the inserted value, and a subsequent call to next()
+     * should be unaffected.
+     */
+    void add(E value);
+
 }

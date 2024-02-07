@@ -56,7 +56,7 @@ public class ArrayList<E> implements List<E>
     public E remove(int ndx)
     {
         E result = values[ndx];
-        for (int i = ndx; i < size-1; i++)
+        for(int i = ndx; i < size-1; i++)
         {
             values[i] = values[i+1];
         }
@@ -67,7 +67,7 @@ public class ArrayList<E> implements List<E>
     private void alloc()
     {
         E[] temp = (E[]) new Object[values.length * 2];
-        for (int i = 0; i < values.length; i++)
+        for(int i = 0; i < values.length; i++)
         {
             temp[i] = values[i];
         }
@@ -91,7 +91,7 @@ public class ArrayList<E> implements List<E>
 
     public int indexOf(Object obj)
     {
-        for (int i = 0; i < size; i++)
+        for(int i = 0; i < size; i++)
         {
             if (values[i].equals(obj))
             {

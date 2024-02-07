@@ -59,4 +59,10 @@ public class ArrayListIterator<E> extends ArrayIterator<E> implements ListIterat
         //else
         //    super.remove();
     }
+
+    public void add(E value)
+    {
+        list.add(ndx+1, value);
+        ndx++;
+    }
 }

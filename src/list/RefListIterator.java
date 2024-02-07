@@ -91,4 +91,25 @@ public class RefListIterator<E> extends RefIterator<E> implements ListIterator<E
             cursor = cursor.next;
         }
     }
+
+    public void add(E value)
+    {
+        if(forward)
+        {
+            Node<E> temp = new Node<E>(value, cursor.next, cursor);
+            cursor.next.prev = temp;
+            cursor.next = temp;
+            cursor = cursor.next;
+            list.size++;
+        }
+        else
+        {
+            Node<E> temp = new Node<E>(value, cursor, cursor.prev);
+            cursor.prev.next = temp;
+            cursor.prev = temp;
+            list.size++;
+
+        }
+
+    }
 }
