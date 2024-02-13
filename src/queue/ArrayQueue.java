@@ -56,11 +56,11 @@ public class ArrayQueue<E> implements QueueADT<E>
         }
 
         String result = "["+ list.get(front % list.size()).toString();
-        for(int i = 1; i <size; i++)
+        for(int i = 1; i < size; i++)
         {
-            result = result + ", " + list.get((front + i) % list.size());
+            result += ", " + list.get((front + i) % list.size());
         }
-        result = result + "]";
+        result += "]";
         return result;
     }
 
