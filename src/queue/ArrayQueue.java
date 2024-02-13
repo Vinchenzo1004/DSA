@@ -45,12 +45,23 @@ public class ArrayQueue<E> implements QueueADT<E>
 
     public boolean isEmpty()
     {
-        return list.isEmpty();
+        return size == 0;
     }
 
     public String toString()
     {
-        return list.toString();
+        if(size == 0)
+        {
+            return "[]";
+        }
+
+        String result = "["+ list.get(front % list.size()).toString();
+        for(int i = 1; i <size; i++)
+        {
+            result = result + ", " + list.get((front + i) % list.size());
+        }
+        result = result + "]";
+        return result;
     }
 
     public void clear()
