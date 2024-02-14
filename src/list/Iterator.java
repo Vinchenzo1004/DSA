@@ -24,4 +24,10 @@ public interface Iterator<E>
      * Pre: next() has been called at least once since last call to remove
      */
     void remove();
+
+    /**
+     * @return true iff the last value visited is equal to the next value in this List.
+     * Pre: hasNext() is true. next() has been called at least once
+     */
+    boolean equalNeighbors();
 }

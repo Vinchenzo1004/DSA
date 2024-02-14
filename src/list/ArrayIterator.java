@@ -30,4 +30,13 @@ class ArrayIterator<E> implements Iterator<E>
         list.remove(ndx);
         ndx--;
     }
+
+    public boolean equalNeighbors()
+    {
+        if(!hasNext())
+        {
+            return false;
+        }
+        return list.get(ndx).equals(list.get(ndx + 1));
+    }
 }

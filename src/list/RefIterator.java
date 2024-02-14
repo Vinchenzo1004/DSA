@@ -34,4 +34,10 @@ public class RefIterator<E> implements Iterator<E>
         cursor.next.prev = cursor.prev;
         list.size--;
     }
+
+    @Override
+    public boolean equalNeighbors()
+    {
+        return false;
+    }
 }
