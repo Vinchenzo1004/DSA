@@ -71,5 +71,10 @@ public class ArrayQueue<E> implements QueueADT<E>
         front = 0;
         back = 0;
     }
+
+    public int size()
+    {
+        return size;
+    }
 }
 

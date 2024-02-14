@@ -35,4 +35,9 @@ public interface QueueADT<E> //ADT - Abstract Data Type
      * @return clear the queue
      */
     void clear();
+
+    /**
+     * @return the size of the queue
+     */
+    int size();
 }

@@ -11,10 +11,10 @@ public class HomeworkStackDriver
 {
     public static void main(String[] args)
     {   System.out.println ("Based on LinkedList");
-        StackADT <String> names = new Stack<String>(false);     // Use LinkedList
+        StackADT <String> names = new Stack<String>();     // Use LinkedList
         test(names);
         System.out.println ("\nBased on ArrayList");            // Use ArrayList
-        names = new Stack<String> (true);
+        names = new Stack<String> ();
         test (names);
     }
      

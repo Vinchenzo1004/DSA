@@ -43,4 +43,9 @@ public class Queue<E> implements QueueADT<E>
     {
         list.clear();
     }
+
+    public int size()
+    {
+        return list.size();
+    }
 }

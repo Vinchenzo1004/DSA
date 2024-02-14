@@ -10,7 +10,7 @@ public class Stack<E> implements StackADT<E>
     //End of list is top of stack
     List<E> list = new ArrayList<E>();
 
-    public Stack(boolean array)
+    /*public Stack(boolean array)
     {
         if(array)
         {
@@ -20,7 +20,7 @@ public class Stack<E> implements StackADT<E>
         {
             list = new LinkedList<E>();
         }
-    }
+    }*/
 
     public E push(E value)
     {
