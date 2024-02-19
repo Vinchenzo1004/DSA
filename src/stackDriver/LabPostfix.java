@@ -1,7 +1,5 @@
 package stackDriver;
-
 import stack.*;
-
 import java.util.Scanner;
 
 /**
@@ -14,8 +12,7 @@ import java.util.Scanner;
  */
 public class LabPostfix
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         postfixEval();
     }
 
@@ -33,7 +30,7 @@ public class LabPostfix
 
         System.out.println("Enter postfix expressions, or Enter to terminate");
         input = scanner.nextLine();
-        while (input.length() > 0)               // Empty input line terminates the program
+        while(input.length() > 0)               // Empty input line terminates the program
         {
             opInts = input.split(" ");      // An array of Strings, delimiter is space
             char first;
@@ -44,13 +41,12 @@ public class LabPostfix
                 if (Character.isDigit(s.charAt(0)))
                 {
                     stack.push(Integer.parseInt(s));
-                }
-                else
+                } else
                 {
                     int left = stack.pop();
                     right = stack.pop();
 
-                    switch(s.charAt(0))
+                    switch (s.charAt(0))
                     {
                         case '+':
                             stack.push(right + left);
@@ -67,7 +63,8 @@ public class LabPostfix
                         case '%':
                             stack.push(right % left);
                             break;
-                        default: System.out.println("Invalid operator: " + s);
+                        default:
+                            System.out.println("Invalid operator: " + s);
                             break;
                     }
                 }
@@ -77,7 +74,6 @@ public class LabPostfix
                 System.out.println(stack.peek());
             }
             stack.clear();
-
             input = scanner.nextLine();
         }
     }
