@@ -8,8 +8,8 @@ public class RecursionTester
         Recursion recursion = new Recursion();
 
         // Test the div method
-        int result = recursion.div(10, 5);
-        System.out.println("Result of div(10, 5): " + result);
+        int result = recursion.div(10, 3);
+        System.out.println("Result of div(10, 3): " + result);
 
         int result1 = recursion.div(25, 5);
         System.out.println("Result of div(25, 5): " + result1);

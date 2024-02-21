@@ -189,4 +189,13 @@ public class ArrayList<E> implements List<E>
     {
         return new ArrayListIterator<E>(this, start);
     }
+
+    public void addAll(List<E> list)
+    {
+        Iterator<E> it = list.iterator();
+        while(it.hasNext())
+        {
+            add(it.next());
+        }
+    }
 }

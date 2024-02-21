@@ -93,4 +93,9 @@ public interface List<E>
      * Pre: 0 <= start <= size
      */
     ListIterator<E> listIterator(int start);
+
+    /**
+     * Add all values from the other List to this List
+     */
+    void addAll(List<E> list);
 }
