@@ -9,9 +9,13 @@ public class Recursion
     public int div(int x, int y)
     {
         if (x < y)
+        {
             return 0;
+        }
         else
+        {
             return 1 + div(x - y, y);
+        }
     }
 
     /**
@@ -21,8 +25,12 @@ public class Recursion
     public int mod(int x, int y)
     {
         if (x < y)
+        {
             return x;
+        }
         else
+        {
             return mod(x - y, y);
+        }
     }
 }

@@ -26,10 +26,21 @@ public class LinkedList<E> implements List<E>
 
     private void setRef(int ndx)
     {
-        ref = head.next;
-        for (int i = 0; i < ndx; i++)
+        if(ndx <= size / 2)
         {
-            ref = ref.next;
+            ref = head.next;
+            for(int i = 0; i < ndx; i++)
+            {
+                ref = ref.next;
+            }
+        }
+        else
+        {
+            ref = tail.prev;
+            for(int i = size - 1; i > ndx; i--)
+            {
+                ref = ref.prev;
+            }
         }
     }
 

@@ -21,6 +21,7 @@ public class BubbleSort<E extends Comparable> implements Sorter<E>
     public void sort(List<E> list)
     {
         this.list = list;
+        boolean isLoop = false;
 
         for(int i = 0; i < list.size() - 1; i++)
         {
@@ -30,9 +31,15 @@ public class BubbleSort<E extends Comparable> implements Sorter<E>
                 E right = list.get(j + 1);
                 if(left.compareTo(right) > 0)
                 {
+                    isLoop = false;
                     swap(j, j + 1);
                 }
             }
+            if(isLoop)
+            {
+                return;
+            }
+            isLoop = true;
         }
     }
 }
