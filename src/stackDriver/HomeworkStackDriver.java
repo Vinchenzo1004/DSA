@@ -10,9 +10,11 @@ import stack.*;
 public class HomeworkStackDriver
 {
     public static void main(String[] args)
-    {   System.out.println ("Based on LinkedList");
+    {
+        System.out.println ("Based on LinkedList");
         StackADT <String> names = new Stack<String>();     // Use LinkedList
         test(names);
+
         System.out.println ("\nBased on ArrayList");            // Use ArrayList
         names = new Stack<String> ();
         test (names);
@@ -21,14 +23,18 @@ public class HomeworkStackDriver
     private static void test(StackADT<String> names)
     {
         if (! names.isEmpty())
-            System.err.println ("Error in isEmpty");
+        {
+            System.err.println("Error in isEmpty");
+        }
         names.push ("mary");
         names.push ("joe");
         names.push ("jim");
         names.push ("joe");
         
         if (names.isEmpty())
-            System.err.println ("Error in isEmpty");
+        {
+            System.err.println("Error in isEmpty");
+        }
         System.out.println (names);             // [mary, joe, jim, joe]
         System.out.println (names.peek());      // joe
         System.out.println (names.pop());       // joe

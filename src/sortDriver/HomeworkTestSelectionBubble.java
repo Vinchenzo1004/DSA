@@ -17,7 +17,6 @@ public class HomeworkTestSelectionBubble
 
     public static void main(String[] args)
     {
-
         System.out.println("Test Selection Sort:");
         Sorter<Integer> sorter = new SelectionSort<Integer>();
         testSort(sorter);
@@ -44,7 +43,8 @@ public class HomeworkTestSelectionBubble
     {
         grades.clear();
         for (int i = 0; i < 20; i++)
+        {
             grades.add(rand.nextInt(150));
-
+        }
     }
 }
