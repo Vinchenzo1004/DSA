@@ -22,8 +22,8 @@ public class HomeworkTestSearch
         Sorter<Integer> quick = new QuickSort();
 
         //Choose one of the following sorting algorithms, and uncomment that line:
-        testSort(selection);
-        //testSort (bubble);
+        //testSort(selection);
+        testSort (bubble);
         //testSort (quick);
 
         System.out.println(grades);    // List to be searched

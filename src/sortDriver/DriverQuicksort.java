@@ -74,5 +74,19 @@ public class DriverQuicksort
         System.out.println(numbers);
         System.out.println();
 
+        numbers.clear();
+        numbers.add(7);
+        numbers.add(6);
+        numbers.add(5);
+        numbers.add(4);
+        numbers.add(3);
+        numbers.add(2);
+        numbers.add(1);
+        System.out.println("Before sorting:");
+        System.out.println(numbers);
+        sorter.sort(numbers);
+        System.out.println("After sorting:");
+        System.out.println(numbers);
+        System.out.println();
     }
 }
