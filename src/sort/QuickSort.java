@@ -20,9 +20,11 @@ public class QuickSort<E extends Comparable> implements Sorter<E>
      */
     private int partition(int start, int end)
     {    //choose start as Pivot
-        int p = start;
-        E pivot = list.get(p);
-        for(int i = start + 1; i <= end; i++)
+        int p = start; //p Pivot position
+        int mid = (start + end) / 2;
+        E pivot = list.get(mid);
+        list.set(mid, list.get(p));
+        for(int i = start + 1; i <= end; i++)         //O(n * log(n))
         {
             if(list.get(i).compareTo(pivot) < 0)
             {
