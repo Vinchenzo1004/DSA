@@ -33,6 +33,13 @@ public interface BinaryTree<E>
     BinaryTree<E> add(E value);
 
     /**
+     * Remove the given object from this BinaryTree, if possible
+     *
+     * @return the resulting BinaryTree
+     */
+    BinaryTree<E> remove(Object obj);
+
+    /**
      * @return the left child of this BinaryTree
      */
     BinaryTree<E> getLeft();

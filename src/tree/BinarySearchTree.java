@@ -1,4 +1,5 @@
 package tree;
+import list.*;
 
 /**
  * A BinarySearchTree is a BinaryTree in which left child is smaller,
@@ -12,7 +13,7 @@ public class BinarySearchTree<E extends Comparable<E>> implements BinaryTree<E>
     BinaryTree<E> left = new EmptyBinarySearchTree<E>(),
             right = new EmptyBinarySearchTree<E>();
     int size = 1;
-    static boolean added;
+    static boolean added, removed;
 
     public BinarySearchTree(E value)
     {
@@ -92,6 +93,85 @@ public class BinarySearchTree<E extends Comparable<E>> implements BinaryTree<E>
             size++;
         }
         return this;
+    }
+
+    public BinaryTree<E> remove(Object obj)
+    {
+        removed = false;
+        try
+        {
+            E value = (E) obj;
+            return removeHelper(value);
+        }
+        catch(ClassCastException cce)
+        {
+            return this;
+        }
+    }
+
+    private BinaryTree<E> removeHelper(E value)
+    {
+        int cmp = this.value.compareTo(value);
+        if(cmp == 0)  //found it
+        {
+            List<BinaryTree<E>> kids = children();
+            if (kids.size() == 0)
+            {
+                return new EmptyBinarySearchTree<E>();
+            }
+
+            if(kids.size() == 1)
+            {
+                return kids.get(0);
+            }
+
+            BinaryTree<E> successor = getSuccessor();
+            removeHelper(successor.getValue());
+            this.value = successor.getValue();
+            return this;
+        }
+
+        //Two children
+        if(cmp < 0)
+        {
+            right = right.remove(value);
+        }
+
+        if(cmp > 0)
+        {
+            left = left.remove(value);
+        }
+
+        if(removed)
+        {
+            size--;
+        }
+        return this;
+    }
+
+    private List<BinaryTree<E>> children()  //return a list of this BinaryTree's children
+    {
+        List<BinaryTree<E>> result = new ArrayList<BinaryTree<E>>();
+        if(!left.isEmpty())
+        {
+            result.add(left);
+        }
+
+        if(!right.isEmpty())
+        {
+            result.add(right);
+        }
+        return result;
+    }
+
+    private BinaryTree<E> getSuccessor()  //return the successor of this BinaryTree
+    {
+        BinaryTree<E> result = right;
+        while(!result.getLeft().isEmpty())
+        {
+            result = result.getLeft();
+        }
+        return result;
     }
 
     public BinaryTree<E> getLeft()

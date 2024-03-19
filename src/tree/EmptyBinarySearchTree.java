@@ -28,6 +28,11 @@ public class EmptyBinarySearchTree<E extends Comparable<E>> implements BinaryTre
         return new BinarySearchTree<E>(value);
     }
 
+    public BinaryTree<E> remove(Object obj)
+    {
+        return this;
+    }
+
     public BinaryTree<E> getLeft()
     {
         return null;
@@ -62,4 +67,6 @@ public class EmptyBinarySearchTree<E extends Comparable<E>> implements BinaryTre
     {
         // do nothing
     }
+
+
 }
