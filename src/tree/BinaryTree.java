@@ -1,4 +1,5 @@
 package tree;
+import list.*;
 
 /**
  * A BinaryTree may have a value, and at most, two children,
@@ -73,4 +74,6 @@ public interface BinaryTree<E>
      * Set the right child of this BinaryTree to the given BinaryTree
      */
     void setRight(BinaryTree<E> right);
+
+    Iterator<E> iterator();
 }

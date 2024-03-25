@@ -209,4 +209,9 @@ public class BinarySearchTree<E extends Comparable<E>> implements BinaryTree<E>
         this.right = right;
         size = left.size() + right.size() + 1;
     }
+
+    public Iterator<E> iterator()
+    {
+        return new TreeIterator<E>(this);
+    }
 }
