@@ -10,7 +10,7 @@ import list.*;
  */
 public class HomeworkTestBT
 {  
-    public static void main( String []args)
+    public static void main(String []args)
     {
         BinaryTree <String> kids = new EmptyBinarySearchTree <String> ();
     
@@ -38,7 +38,7 @@ public class HomeworkTestBT
      
         System.out.println();
 //   remove all strings which are longer than 3 chars
-//   but do not remove all of the strings
+//   but do not remove all the strings
         itty = kids.iterator();
         while (itty.hasNext())
             if (itty.next().length() > 3)

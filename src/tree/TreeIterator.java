@@ -64,9 +64,4 @@ public class TreeIterator<E> implements Iterator<E>
             tree = tree.remove(lastGotten);
         }
     }
-
-    public boolean equalNeighbors()
-    {
-        return lastGotten.equals(tree.getValue());
-    }
 }

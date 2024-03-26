@@ -35,7 +35,10 @@ public class RefIterator<E> implements Iterator<E>
         list.size--;
     }
 
-    @Override
+    /**
+     * @return true iff the last value visited is equal to the next value in this List.
+     * Pre: hasNext() is true. next() has been called at least once
+     */
     public boolean equalNeighbors()
     {
         return false;

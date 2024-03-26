@@ -31,6 +31,10 @@ class ArrayIterator<E> implements Iterator<E>
         ndx--;
     }
 
+    /**
+     * @return true iff the last value visited is equal to the next value in this List.
+     * Pre: hasNext() is true. next() has been called at least once
+     */
     public boolean equalNeighbors()
     {
         if(!hasNext())

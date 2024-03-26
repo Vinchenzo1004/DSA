@@ -114,8 +114,9 @@ public class BinarySearchTree<E extends Comparable<E>> implements BinaryTree<E>
         int cmp = this.value.compareTo(value);
         if(cmp == 0)  //found it
         {
+            removed = true;
             List<BinaryTree<E>> kids = children();
-            if (kids.size() == 0)
+            if (kids.isEmpty())
             {
                 return new EmptyBinarySearchTree<E>();
             }
