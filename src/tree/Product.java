@@ -34,22 +34,22 @@ public class Product extends Expr
     {
         left = left.simplify();
         right = right.simplify();
-        if(left instanceof Constant && left.eval() == 1)  //1 * x = x
+        if(left instanceof Constant && left.equals(new Constant(1)))  //1 * x = x
         {
             return right;
         }
 
-        if(right instanceof Constant && right.eval() == 1)  //x * 1 = x
+        if(right instanceof Constant && right.equals(new Constant(1)))  //x * 1 = x
         {
             return left;
         }
 
-        if(left instanceof Constant && left.eval() == 0)  //0 * x = 0
+        if(left instanceof Constant && left.equals(new Constant(0)))  //0 * x = 0
         {
             return new Constant(0);
         }
 
-        if(right instanceof Constant && right.eval() == 0)  //x * 0 = 0
+        if(right instanceof Constant && right.equals(new Constant(0)))  //x * 0 = 0
         {
             return new Constant(0);
         }

@@ -34,19 +34,21 @@ public class Mod extends Expr
         right = right.simplify();
         if(left instanceof Constant && right instanceof Constant)
         {
-            if(right.eval() != 0)
+            if(left.equals(new Constant(0)))
             {
-                int remainder = eval();
-                return new Constant(remainder);
+                return new Constant(0);
             }
 
-            if(right.eval() == 0)
+            if(right.equals(new Constant(0)))
             {
                 System.err.println("Cannot have zero as the right operand");
-                return null;
+            }
+
+            if(right.equals(new Constant(1)) || left.equals(right))
+            {
+                return new Constant(0);
             }
         }
-
         return this;
     }
 

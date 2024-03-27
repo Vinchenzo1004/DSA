@@ -215,4 +215,15 @@ public class BinarySearchTree<E extends Comparable<E>> implements BinaryTree<E>
     {
         return new TreeIterator<E>(this);
     }
+
+    public String toString()
+    {
+        Iterator<E> it = this.iterator();
+        String out = "[" + it.next();
+        while(it.hasNext())
+        {
+            out += ", " + it.next();
+        }
+        return out + "]";
+    }
 }

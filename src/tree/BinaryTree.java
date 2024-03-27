@@ -76,4 +76,9 @@ public interface BinaryTree<E>
     void setRight(BinaryTree<E> right);
 
     Iterator<E> iterator();
+
+    /**
+     * @return this BinaryTree as a String, using an in-order traversal
+     */
+    String toString();
 }

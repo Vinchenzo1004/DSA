@@ -36,12 +36,12 @@ public class Sum extends Expr
     {
         left = left.simplify();
         right = right.simplify();
-        if(left instanceof Constant && left.eval() == 0)  //0 + x = x
+        if(left instanceof Constant && left.equals(new Constant(0)))  //0 + x = x
         {
             return right;
         }
 
-        if(right instanceof Constant && right.eval() == 0)  //x + 0 = x
+        if(right instanceof Constant && right.equals(new Constant(0)))  //x + 0 = x
         {
             return left;
         }
