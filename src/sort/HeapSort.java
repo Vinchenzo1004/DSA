@@ -14,14 +14,15 @@ public class HeapSort<E extends Comparable> implements Sorter<E>
     public void sort(List<E> list)
     {
         this.list = list;
-        heapify(0);
+        heapify(0);  //O(n * log(n))
         int last = list.size() - 1;
 
-        while(last > 0)
+        //repeat n times
+        while(last > 0)  //O(n * Log(n))
         {
             swap(0, last);
             last--;
-            percDown(0, last);
+            percDown(0, last);  //O(log(n))
         }
     }
 
