@@ -37,7 +37,7 @@ public class Product extends Expr
         if(right instanceof Quotient)
         {
             Quotient q = (Quotient) right;
-            if (left.equals(q.right))
+            if(left.equals(q.right))
             {
                 return q.left;
             }
