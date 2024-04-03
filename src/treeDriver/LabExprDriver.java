@@ -70,7 +70,7 @@ public class LabExprDriver
         e = new Product(new Variable('y'), e);                    //   y * (x/x)
         e = new Difference(e, new Variable('y'));                   //   y * (x/x) - y
         e = new Sum(e, new Constant(1));                             //   (y * (x/x) - y) + 1
-        System.out.print(e + "simplifies to ");
+        System.out.print(e + " simplifies to ");
         System.out.println(e.simplify());        //   1
 
         e1 = new Difference(new Variable('a'), new Variable('b'));
@@ -81,6 +81,11 @@ public class LabExprDriver
         e2 = new Quotient(new Variable('b'), new Variable('a'));
         if (e1.equals(e2))
             System.err.println("Not correct");
+
+        e1 = new Quotient(new Variable('y'), new Variable('x'));
+        e2 = new Product (new Variable('x'), e1);
+        System.out.print(e2 + " simplifies to ");
+        System.out.println(e2.simplify());
 
  ////////  Uncomment the following when ready for the Assign operator
          System.out.println ("\nTesting assignment of values to variables");
