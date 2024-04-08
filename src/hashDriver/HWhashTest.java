@@ -9,8 +9,7 @@ import hash.*;
  */
 public class HWhashTest
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         HashTable<Integer> nums = new HashTable<Integer>(3);
 
         for (int i = 0; i < 20; i = i + 2)

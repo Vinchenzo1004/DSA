@@ -114,10 +114,8 @@ public class HashTable<K>
     /**
      * Clear this HashTable
      */
-    public void clear()
-    {
-        for(int i = 0; i < lists.size(); i++)
-        {
+    public void clear() {
+        for (int i = 0; i < lists.size(); i++) {
             lists.set(i, new LinkedList<K>());
         }
         size = 0;
