@@ -34,6 +34,15 @@ public class Product extends Expr
     {
         left = left.simplify();
         right = right.simplify();
+        if(right instanceof Quotient)
+        {
+            Quotient q = (Quotient) right;
+            if(left.equals(q.right))
+            {
+                return q.left;
+            }
+        }
+
         if(left instanceof Constant && left.equals(new Constant(1)))  //1 * x = x
         {
             return right;

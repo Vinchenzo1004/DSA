@@ -60,5 +60,4 @@ private static void testEquals (List <String> l1, List <String> l2)
         System.err.println ("Error in equals(Object)");
     
 }
-    
 }
