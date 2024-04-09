@@ -122,4 +122,9 @@ public class HashTable<K>
         }
         size = 0;
     }
+
+    public Iterator<K> iterator()
+    {
+        return new TableIterator<K>(this);
+    }
 }
