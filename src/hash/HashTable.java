@@ -46,7 +46,7 @@ public class HashTable<K>
      *
      * @return the LinkedList
      */
-    private List<K> getList(Object obj)
+    public List<K> getList(Object obj)
     {
         int code = obj.hashCode();
         code = Math.abs(code);
@@ -126,5 +126,19 @@ public class HashTable<K>
     public Iterator<K> iterator()
     {
         return new TableIterator<K>(this);
+    }
+
+    public String toString()
+    {
+        String s = "";
+        TableIterator<K> it = new TableIterator<K>(this);
+        while(it.hasNext())
+        {
+            if(it.hasNext())
+            {
+                s += it.next() + "\n";
+            }
+        }
+        return s;
     }
 }
