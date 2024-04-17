@@ -1,5 +1,6 @@
 package map;
 import hash.*;
+import list.*;
 
 /**
  * A Map implemented as a HashTable of Entries.
@@ -100,5 +101,20 @@ public class HashMap<K, V> implements Map<K, V>
     public String toString()
     {
         return table.toString();
+    }
+
+    public K getKey(V value)
+    {
+        Iterator<Entry<K, V>> it = table.iterator();
+
+        while(it.hasNext())
+        {
+            Entry<K, V> entry = it.next();
+            if(entry.value.equals(value))
+            {
+                return entry.key;
+            }
+        }
+        return null;
     }
 }

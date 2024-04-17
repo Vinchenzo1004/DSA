@@ -50,4 +50,9 @@ public interface Map<K, V>
      * Clear this Map
      */
     void clear();
+
+    /**
+     * @return a key for the given value, or null if not found
+     */
+    K getKey(V value);
 }
