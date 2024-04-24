@@ -30,6 +30,11 @@ public class TreeMap<K extends Comparable, V> implements Map<K, V>
             Entry<K, V> other = (Entry) obj;
             return key.compareTo(other.key);
         }
+
+        public String toString()
+        {
+            return "" + key + " = " + value + "";
+        }
     }  //end inner class
 
     BinaryTree<Entry<K, V>> tree = new EmptyBinarySearchTree();
@@ -95,6 +100,11 @@ public class TreeMap<K extends Comparable, V> implements Map<K, V>
         tree = new EmptyBinarySearchTree();
     }
 
+    public String toString()
+    {
+        return tree.toString();
+    }
+
     public K getKey(V value)
     {
         Entry<K, V> entry = new Entry<K, V>(null, value);
@@ -105,5 +115,46 @@ public class TreeMap<K extends Comparable, V> implements Map<K, V>
             return null;
         }
         return entry.key;
+    }
+
+    public Set<K> keySet()
+    {
+        Set<K> keys = new HashSet<>();
+        Iterator<Entry<K, V>> it = tree.iterator();
+
+        while(it.hasNext())
+        {
+            Entry<K, V> entry = it.next();
+            keys.add(entry.key);
+        }
+        return keys;
+    }
+
+    /**
+     * @return true iff the given object is a Map, and this Map is equal to the given object
+     */
+    public boolean equals(Object obj)
+    {
+        if(!(obj instanceof Map))
+        {
+            return false;
+        }
+
+        Map<K, V> other = (Map<K, V>) obj;
+        if(this.size() != other.size())
+        {
+            return false;
+        }
+
+        Iterator<Entry<K, V>> it = tree.iterator();
+        while(it.hasNext())
+        {
+            Entry<K, V> entry = it.next();
+            if(!other.containsKey(entry.key) || !other.get(entry.key).equals(entry.value))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

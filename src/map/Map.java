@@ -1,4 +1,5 @@
 package map;
+import set.*;
 
 /**
  * A Map consists of several Entries.
@@ -55,4 +56,9 @@ public interface Map<K, V>
      * @return a key for the given value, or null if not found
      */
     K getKey(V value);
+
+    /**
+     * @return a Set of all the keys in this Map
+     */
+    Set<K> keySet();
 }

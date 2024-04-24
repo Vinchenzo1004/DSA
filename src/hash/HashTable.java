@@ -130,15 +130,16 @@ public class HashTable<K>
 
     public String toString()
     {
-        String s = "";
+        String s = "[";
         TableIterator<K> it = new TableIterator<K>(this);
         while(it.hasNext())
         {
+            s += it.next().toString();
             if(it.hasNext())
             {
-                s += it.next() + "\n";
+                s += ", ";
             }
         }
-        return s;
+        return s + "]";
     }
 }

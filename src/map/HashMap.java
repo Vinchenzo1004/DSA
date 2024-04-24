@@ -1,6 +1,7 @@
 package map;
 import hash.*;
 import list.*;
+import set.*;
 
 /**
  * A Map implemented as a HashTable of Entries.
@@ -34,6 +35,11 @@ public class HashMap<K, V> implements Map<K, V>
             int code = 17;
             code = 31 * code + key.hashCode();
             return code;
+        }
+
+        public String toString()
+        {
+            return "" + key + " = " + value + "";
         }
     }  //end inner class
 
@@ -116,5 +122,46 @@ public class HashMap<K, V> implements Map<K, V>
             }
         }
         return null;
+    }
+
+    public Set<K> keySet()
+    {
+        Set<K> keys = new HashSet<>();
+        Iterator<Entry<K, V>> it = table.iterator();
+
+        while(it.hasNext())
+        {
+            Entry<K, V> entry = it.next();
+            keys.add(entry.key);
+        }
+        return keys;
+    }
+
+    /**
+     * @return true iff the given object is a Map, and this Map is equal to the given object
+     */
+    public boolean equals(Object obj)
+    {
+        if(!(obj instanceof Map))
+        {
+            return false;
+        }
+
+        Map<K, V> other = (Map<K, V>) obj;
+        if(this.size() != other.size())
+        {
+            return false;
+        }
+
+        Iterator<Entry<K, V>> it = table.iterator();
+        while(it.hasNext())
+        {
+            Entry<K, V> entry = it.next();
+            if(!other.containsKey(entry.key) || !other.get(entry.key).equals(entry.value))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
