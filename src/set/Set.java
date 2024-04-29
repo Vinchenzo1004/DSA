@@ -47,4 +47,9 @@ public interface Set<E>
      * Clear this Set
      */
     void clear();
+
+    /**
+     * @return the difference: this Set - other Set
+     */
+    Set<E> difference(Set<E> other);
 }

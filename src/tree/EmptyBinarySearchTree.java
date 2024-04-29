@@ -78,4 +78,9 @@ public class EmptyBinarySearchTree<E extends Comparable<E>> implements BinaryTre
     {
         return "[]";
     }
+
+    public int height()
+    {
+        return 0;
+    }
 }

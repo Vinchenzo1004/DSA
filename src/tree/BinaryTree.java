@@ -81,4 +81,14 @@ public interface BinaryTree<E>
      * @return this BinaryTree as a String, using an in-order traversal
      */
     String toString();
+
+    /**
+     * @return the height of this BinaryTree
+     */
+    int height();
+
+    /**
+     * @return true iff this BinaryTree is balanced
+     */
+    boolean isBalanced();
 }

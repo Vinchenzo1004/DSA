@@ -102,4 +102,9 @@ public class TreeSet<E extends Comparable> implements Set<E>
         }
         return true;
     }
+
+    public Set<E> difference(Set<E> other)
+    {
+        return null;
+    }
 }

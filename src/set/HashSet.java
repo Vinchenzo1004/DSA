@@ -105,4 +105,19 @@ public class HashSet<E> implements Set<E>
         }
         return true;
     }
+
+    public Set<E> difference(Set<E> other)
+    {
+        Set<E> result = new HashSet<>();
+        Iterator<E> it = iterator();
+        while(it.hasNext())
+        {
+            E value = it.next();
+            if(!other.contains(value))
+            {
+                result.add(value);
+            }
+        }
+        return result;
+    }
 }

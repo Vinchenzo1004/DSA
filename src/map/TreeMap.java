@@ -133,25 +133,20 @@ public class TreeMap<K extends Comparable, V> implements Map<K, V>
     /**
      * @return true iff the given object is a Map, and this Map is equal to the given object
      */
-    public boolean equals(Object obj)
-    {
-        if(!(obj instanceof Map))
-        {
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Map)) {
             return false;
         }
 
         Map<K, V> other = (Map<K, V>) obj;
-        if(this.size() != other.size())
-        {
+        if (this.size() != other.size()) {
             return false;
         }
 
         Iterator<Entry<K, V>> it = tree.iterator();
-        while(it.hasNext())
-        {
+        while (it.hasNext()) {
             Entry<K, V> entry = it.next();
-            if(!other.containsKey(entry.key) || !other.get(entry.key).equals(entry.value))
-            {
+            if (!other.containsKey(entry.key) || !other.get(entry.key).equals(entry.value)) {
                 return false;
             }
         }
