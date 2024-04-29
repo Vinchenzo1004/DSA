@@ -83,4 +83,9 @@ public class EmptyBinarySearchTree<E extends Comparable<E>> implements BinaryTre
     {
         return 0;
     }
+
+    public boolean isBalanced()
+    {
+        return true;
+    }
 }

@@ -235,4 +235,13 @@ public class BinarySearchTree<E extends Comparable<E>> implements BinaryTree<E>
         }
         return 1 + Math.max(left.height(), right.height());
     }
+
+    public boolean isBalanced()
+    {
+        if (isEmpty())
+        {
+            return true;
+        }
+        return Math.abs(left.height() - right.height()) <= 1 && left.isBalanced() && right.isBalanced();
+    }
 }
